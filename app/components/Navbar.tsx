@@ -6,7 +6,7 @@ import avatar from "../assets/images/image-avatar.png";
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 border-b-2 h-28 flex  justify-between">
+    <nav className="sticky top-0 border-b-2 h-28 flex  justify-between bg-white">
       <div id="left" className="flex items-center">
         <div id="logo" className="mr-14 flex items-center">
           <Image src={logo} alt="logo" width={130} className="opacity-90" />
