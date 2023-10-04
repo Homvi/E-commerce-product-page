@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html className={kumbhSans.className} lang="en">
       <body>
-        <section className="max-w-4xl mx-auto">
+        <section className="max-w-[1250px] mx-auto">
           <Navbar />
           {children}
         </section>
