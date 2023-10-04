@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Carousel from "./components/Carousel";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Hello Mentor</h1>
+    <div className="min-h-screen p-12">
+      <Carousel />
     </div>
   );
 }
