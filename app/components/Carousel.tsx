@@ -11,7 +11,7 @@ import imageOneSmall from "../assets/images/image-product-1-thumbnail.jpg";
 
 const Carousel = () => {
   return (
-    <div className="carousel max-w-md">
+    <div className="carousel max-w-[50%]">
       <div className="carousel-item carousel-item-main">
         <Image
           src={imageOneBig}
