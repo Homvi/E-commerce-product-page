@@ -1,6 +1,7 @@
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
+import Navbar from "./components/Navbar";
 
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"] });
 
@@ -15,8 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={kumbhSans.className}>{children}</body>
+    <html className={kumbhSans.className} lang="en">
+      <body>
+        <section className="max-w-4xl mx-auto">
+          <Navbar />
+          {children}
+        </section>
+      </body>
     </html>
   );
 }
