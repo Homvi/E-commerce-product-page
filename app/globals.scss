@@ -132,8 +132,9 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 3em;
+    border-radius: 0.5rem;
     span {
+      border-radius: 0.5rem;
       background-color: $lightGrayishBlue;
       font-weight: 700;
       width: 100%;
