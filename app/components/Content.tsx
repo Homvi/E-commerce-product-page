@@ -1,5 +1,8 @@
 import React from "react";
 import IncreaseButton from "./IncreaseButton";
+import PrimaryButton from "./primaryButton/PrimaryButton";
+import Image from "next/image";
+import cartWhite from "../assets/images/icon-cart-white.svg";
 
 const Content = () => {
   return (
@@ -17,7 +20,20 @@ const Content = () => {
           <span className="discount">50%</span>
         </div>
         <h4 className="discounted-price">$250.00</h4>
-        <IncreaseButton />
+        <div className="flex gap-3">
+          <IncreaseButton />
+          <PrimaryButton>
+            <span>
+              <Image
+                src={cartWhite}
+                alt="logo"
+                width={16}
+                className="opacity-90"
+              />
+            </span>
+            <span>Add to cart</span>
+          </PrimaryButton>
+        </div>
       </div>
     </div>
   );
