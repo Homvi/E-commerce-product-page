@@ -6,7 +6,7 @@ const IncreaseButton = () => {
   const [number, setNumber] = useState(1);
 
   return (
-    <div className="counter-button rounded-lg">
+    <div className="counter-button">
       <span
         className="orange"
         onClick={() => {
