@@ -1,0 +1,36 @@
+//Colors
+
+//Primary
+
+$orange: hsl(26, 100%, 55%);
+$paleOrange: hsl(25, 100%, 94%);
+
+//Neutral
+$veryDarkBlue: hsl(220, 13%, 13%);
+$darkGrayishBlue: hsl(219, 9%, 45);
+$grayishBlue: hsl(220, 14%, 75%);
+$lightGrayishBlue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsla(0, 0%, 0%, 0.75);
+
+div.primary-button {
+  background-color: $orange;
+  cursor: pointer;
+  display: flex;
+  box-shadow: 0px 15px 10px $paleOrange;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  padding: 0px 4em;
+  height: 3.5em;
+  border-radius: 0.5rem;
+  font-size: small;
+  .container {
+    width: max-content;
+    gap: 1em;
+    display: flex;
+  }
+}
+div.primary-button:hover {
+  opacity: 0.7;
+}
