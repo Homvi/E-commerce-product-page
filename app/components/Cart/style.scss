@@ -1,0 +1,72 @@
+$orange: hsl(26, 100%, 55%);
+$paleOrange: hsl(25, 100%, 94%);
+
+//Neutral
+$veryDarkBlue: hsl(220, 13%, 13%);
+$darkGrayishBlue: hsl(219, 9%, 45);
+$grayishBlue: hsl(220, 14%, 75%);
+$lightGrayishBlue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsla(0, 0%, 0%, 0.75);
+
+$default-border-radious: 0.6rem;
+
+#cart {
+  width: 400px;
+  height: 250px;
+  background-color: $white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1001;
+  top: 6em;
+  right: 0;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.171);
+  border-radius: $default-border-radious;
+  .header {
+    h2 {
+      display: flex;
+      font-weight: 700;
+      opacity: 0.8;
+      padding: 1em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+    }
+  }
+  .details {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      gap: 1em;
+    }
+    .thumbnail {
+      img {
+        width: 3.5em;
+        border-radius: $default-border-radious;
+      }
+    }
+    .text {
+      color: $darkGrayishBlue;
+      .highlight {
+        font-weight: 700;
+        color: $veryDarkBlue;
+      }
+      .name {
+        margin-bottom: 0.3em;
+      }
+    }
+    .delete-container {
+      cursor: pointer;
+      img {
+        width: 1em;
+      }
+    }
+  }
+  .button-container {
+    padding: 1em;
+  }
+}
