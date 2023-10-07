@@ -5,6 +5,10 @@ import close from "../../assets/images/icon-close.svg";
 import next from "../../assets/images/icon-next.svg";
 import nextOrange from "../../assets/images/icon-next-orange.svg";
 import mainImage from "../../assets/images/image-product-1.jpg";
+import imageFourSmall from "../../assets/images/image-product-4-thumbnail.jpg";
+import imageThreeSmall from "../../assets/images/image-product-3-thumbnail.jpg";
+import imageTwoSmall from "../../assets/images/image-product-2-thumbnail.jpg";
+import imageOneSmall from "../../assets/images/image-product-1-thumbnail.jpg";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -48,6 +52,44 @@ const Modal = () => {
               alt="product"
               height={60}
               width={60}
+            />
+          </div>
+        </div>
+        <div className="thumbnails-container">
+          <div className="thumbnail selected">
+            <Image
+              src={imageOneSmall}
+              alt="product"
+              height={200}
+              width={200}
+              className="thumbnail-image"
+            />
+          </div>
+          <div className="thumbnail">
+            <Image
+              src={imageTwoSmall}
+              alt="product"
+              height={200}
+              width={200}
+              className="thumbnail-image"
+            />
+          </div>
+          <div className="thumbnail">
+            <Image
+              src={imageThreeSmall}
+              alt="product"
+              height={200}
+              width={200}
+              className="thumbnail-image"
+            />
+          </div>
+          <div className="thumbnail">
+            <Image
+              src={imageFourSmall}
+              alt="product"
+              height={400}
+              width={400}
+              className="thumbnail-image"
             />
           </div>
         </div>
