@@ -1,0 +1,74 @@
+$default-border-radious: 0.6rem;
+$white: #fff;
+
+#modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100lvh;
+  .modal-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    height: 90lvh;
+    .close-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      img {
+        cursor: pointer;
+        opacity: 0.6;
+      }
+      img:hover {
+        opacity: 0.9;
+      }
+    }
+    .main-image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      .main-image {
+        border-radius: $default-border-radious;
+        height: 70vh;
+        width: auto;
+      }
+      .button {
+        height: 60px;
+        width: 60px;
+        position: absolute;
+        background-color: $white;
+        border-radius: 100%;
+        padding: 10px;
+        top: calc(35vh - 30px);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          position: relative;
+          width: 15px;
+          fill: #fff;
+        }
+      }
+      .next-button {
+        right: -30px;
+      }
+
+      .prev-button {
+        left: -30px;
+        img {
+          rotate: 180deg;
+        }
+      }
+    }
+  }
+}
