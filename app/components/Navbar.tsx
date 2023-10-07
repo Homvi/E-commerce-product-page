@@ -3,6 +3,7 @@ import React from "react";
 import logo from "../assets/images/logo.svg";
 import cart from "../assets/images/icon-cart.svg";
 import avatar from "../assets/images/image-avatar.png";
+import Cart from "./Cart/Cart";
 
 const Navbar = () => {
   return (
@@ -42,6 +43,7 @@ const Navbar = () => {
           />
         </div>
       </div>
+      <Cart />
     </nav>
   );
 };
