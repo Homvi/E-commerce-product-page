@@ -1,5 +1,6 @@
 $default-border-radious: 0.6rem;
 $white: #fff;
+$orange: hsl(26, 100%, 55%);
 
 #modal {
   display: flex;
@@ -16,7 +17,7 @@ $white: #fff;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    gap: 1em;
+    gap: 3lvh;
     height: 90lvh;
     .close-container {
       display: flex;
@@ -62,11 +63,33 @@ $white: #fff;
       .next-button {
         right: -30px;
       }
-
       .prev-button {
         left: -30px;
         img {
           rotate: 180deg;
+        }
+      }
+    }
+    .thumbnails-container {
+      display: flex;
+      .thumbnail.selected {
+        border: 2px solid $orange;
+        border-radius: 0.7rem;
+      }
+      .thumbnail-image:hover {
+        opacity: 0.5;
+      }
+      .thumbnail {
+        cursor: pointer;
+        border-radius: $default-border-radious;
+        height: 14vh;
+        background-color: white;
+        width: auto;
+        margin: 0 0.5em;
+        .thumbnail-image {
+          border-radius: $default-border-radious;
+          height: 100%;
+          width: auto;
         }
       }
     }
