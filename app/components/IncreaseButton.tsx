@@ -1,24 +1,31 @@
 "use client";
 
-import { useState } from "react";
+type IncreaseButtonProps = {
+  handleQuantityChange: (quantity: number) => void;
+  quantity: number;
+};
 
-const IncreaseButton = () => {
-  const [number, setNumber] = useState(1);
-
+const IncreaseButton: React.FC<IncreaseButtonProps> = ({
+  handleQuantityChange,
+  quantity,
+}) => {
   return (
     <div className="counter-button">
       <span
         className="orange"
         onClick={() => {
-          if (number > 1) {
-            setNumber((curr) => curr - 1);
+          if (quantity > 1) {
+            handleQuantityChange(quantity - 1);
           }
         }}
       >
         -
       </span>
-      <span>{number}</span>
-      <span className="orange" onClick={() => setNumber((curr) => curr + 1)}>
+      <span>{quantity}</span>
+      <span
+        className="orange"
+        onClick={() => handleQuantityChange(quantity + 1)}
+      >
         +
       </span>
     </div>
