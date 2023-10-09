@@ -1,10 +1,25 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import IncreaseButton from "./IncreaseButton";
 import PrimaryButton from "./primaryButton/PrimaryButton";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 import Image from "next/image";
 import cartWhite from "../assets/images/icon-cart-white.svg";
 
 const Content = () => {
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
+  const handleQuantityChange = (value: number) => {
+    setQuantity(value);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(quantity));
+  };
+
   return (
     <div id="contentContainer">
       <div className="content-wrapper">
@@ -21,8 +36,11 @@ const Content = () => {
         </div>
         <h4 className="discounted-price">$250.00</h4>
         <div className="flex gap-3">
-          <IncreaseButton />
-          <PrimaryButton>
+          <IncreaseButton
+            quantity={quantity}
+            handleQuantityChange={handleQuantityChange}
+          />
+          <PrimaryButton handleAddToCart={handleAddToCart}>
             <span>
               <Image
                 src={cartWhite}
