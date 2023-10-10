@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import IncreaseButton from "./IncreaseButton";
 import PrimaryButton from "./primaryButton/PrimaryButton";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/slices/cartSlice";
+import { cartSlice, useDispatch } from "@/lib/redux";
 import Image from "next/image";
 import cartWhite from "../assets/images/icon-cart-white.svg";
 
@@ -17,7 +16,7 @@ const Content = () => {
   };
 
   const handleAddToCart = () => {
-    dispatch(addToCart(quantity));
+    dispatch(cartSlice.actions.incrementByAmount(quantity));
   };
 
   return (
