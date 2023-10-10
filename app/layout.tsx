@@ -15,8 +15,10 @@ export default function RootLayout(props: React.PropsWithChildren) {
     <Providers>
       <html className={kumbhSans.className} lang="en">
         <body>
-          <Navbar />
-          <section className="max-w-[1250px] mx-auto">{props.children}</section>
+          <section className="max-w-[1250px] mx-auto">
+            <Navbar />
+            {props.children}
+          </section>
         </body>
       </html>
     </Providers>
