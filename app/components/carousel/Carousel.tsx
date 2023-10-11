@@ -11,7 +11,7 @@ const Carousel = () => {
 
   return (
     <>
-      <div className="carousel w-[50%]">
+      <div className="carousel w-full">
         {/* main image */}
 
         <div
