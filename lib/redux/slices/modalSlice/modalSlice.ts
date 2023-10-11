@@ -2,7 +2,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 const initialState: ModalSliceState = {
-  value: 0,
+  value: null,
 }
 
 export const modalSlice = createSlice({
@@ -11,7 +11,7 @@ export const modalSlice = createSlice({
 
   reducers: {
     closeModal: (state) => {
-      state.value = 0
+      state.value = null
     },
      // Use the PayloadAction type to declare the contents of `action.payload`
      changeImage: (state, action: PayloadAction<number>) => {
@@ -22,5 +22,5 @@ export const modalSlice = createSlice({
 
 /* Types */
 export interface ModalSliceState {
-  value: number
+  value: number | null
 }
