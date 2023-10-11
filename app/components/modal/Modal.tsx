@@ -10,9 +10,17 @@ import imageThreeSmall from "../../assets/images/image-product-3-thumbnail.jpg";
 import imageTwoSmall from "../../assets/images/image-product-2-thumbnail.jpg";
 import imageOneSmall from "../../assets/images/image-product-1-thumbnail.jpg";
 import Image from "next/image";
+import { modalSlice, useSelector, useDispatch, selectImage } from "@/lib/redux";
 import { useState } from "react";
 
 const Modal = () => {
+  const dispatch = useDispatch();
+  const activeModal = useSelector(selectImage);
+
+  const handleClose = () => {
+    dispatch(modalSlice.actions.closeModal());
+  };
+
   const [isNextButtonHovered, setIsNextButtonHovered] = useState(false);
   const [isPrevButtonHovered, setIsPrevButtonHovered] = useState(false);
 
