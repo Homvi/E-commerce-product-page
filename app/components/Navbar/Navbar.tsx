@@ -55,7 +55,7 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <Cart isCartOpen={isCartOpen} />
+    { isCartOpen &&  <Cart />}  
     </nav>
   );
 };
