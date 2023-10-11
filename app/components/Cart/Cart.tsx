@@ -16,7 +16,7 @@ const Cart = () => {
   };
 
   return (
-    <div id="cart">
+    <div id="cart" className="w-[95vw] md:w-96 top-16 md:top-24">
       <div className="header">
         <h2>Cart</h2>
       </div>
