@@ -27,7 +27,7 @@ const MobileCarousel = () => {
 
   return (
     <div id="mobileCarousel">
-      <Image src={images[activeImage].normal} alt="main image" />
+      <Image src={images[activeImage].normal} alt="main image"  priority={true}/>
       <div className="button next-button" onClick={handleNextImage}>
         <Image src={next} alt="product" height={60} width={60} />
       </div>
