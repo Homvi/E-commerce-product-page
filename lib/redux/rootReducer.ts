@@ -1,7 +1,8 @@
 /* Instruments */
-import { cartSlice, modalSlice } from './slices'
+import { cartSlice, modalSlice, menuSlice } from './slices'
 
 export const reducer = {
   cart: cartSlice.reducer,
   modal: modalSlice.reducer,
+  menu: menuSlice.reducer,
 }
