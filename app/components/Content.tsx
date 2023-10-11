@@ -22,8 +22,8 @@ const Content = () => {
   return (
     <div id="contentContainer" className="p-4 md:p-8">
       <div className="content-wrapper">
-        <h2>sneaker company</h2>
-        <h1 className=" text-3xl mb-3  md:mb-4 md:text-5xl">Fall Limited Edition Sneakers</h1>
+        <h1>sneaker company</h1>
+        <h2 className=" text-3xl mb-3  md:mb-4 md:text-5xl">Fall Limited Edition Sneakers</h2>
         <p className="mb-4 md:mb-8" >
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable ubber outer sole, they&apos;ll withstand
