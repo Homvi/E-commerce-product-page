@@ -7,11 +7,7 @@ import "./style.scss";
 import Image from "next/image";
 import { cartSlice, useSelector, useDispatch, selectCart } from "@/lib/redux";
 
-interface Props {
-  isCartOpen: boolean;
-}
-
-const Cart: React.FC<Props> = () => {
+const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector(selectCart);
 
