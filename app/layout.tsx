@@ -1,7 +1,7 @@
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Kumbh_Sans } from "next/font/google";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"] });
 import { Providers } from "@/lib/providers";
 
