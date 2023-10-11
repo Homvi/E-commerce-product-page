@@ -14,7 +14,7 @@ export default function RootLayout(props: React.PropsWithChildren) {
   return (
     <Providers>
       <html className={kumbhSans.className} lang="en">
-        <body>
+        <body className="overflow-x-hidden">
           <section className="max-w-[1250px] mx-auto">
             <Navbar />
             {props.children}
