@@ -59,7 +59,6 @@ body {
   flex-direction: column;
   display: flex;
   justify-content: center;
-  width: 50%;
   margin: 0 auto;
   h2 {
     color: $orange;
@@ -99,11 +98,9 @@ body {
     font-weight: 700;
     color: $grayishBlue;
     text-decoration: line-through;
-    margin-bottom: 2em;
   }
   .counter-button {
     background-color: $lightGrayishBlue;
-    width: 10em;
     display: flex;
     justify-content: space-around;
     align-items: center;
