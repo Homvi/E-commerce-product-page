@@ -5,9 +5,13 @@ import Content from "./components/Content";
 import MobileCarousel from "./components/mobileCarousel/MobileCarousel";
 import Modal from "./components/modal/Modal";
 import { useSelector, selectImage } from "@/lib/redux";
+import { selectMenu } from "@/lib/redux";
+import MobileMenu from "./components/mobileMenu/MobileMenu";
 
 export default function Home() {
+  const isMenuOpen = useSelector(selectMenu);
   const selectedImage = useSelector(selectImage);
+
   return (
     <>
       <div className=" md:h-screen md:p-12 md:flex">
@@ -22,6 +26,7 @@ export default function Home() {
         </div>
       </div>
       {selectedImage !== null && <Modal />}
+      {isMenuOpen && <MobileMenu />}
     </>
   );
 }
