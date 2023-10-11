@@ -16,7 +16,7 @@ const Navbar = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
-    <nav className="sticky max-w-[90%] mx-auto top-0 md:border-b-2 h-14 md:h-28 flex justify-between bg-white">
+    <nav className="sticky px-3 md:px-0 md:max-w-[90%] mx-auto top-0 md:border-b-2 h-14 md:h-28 flex justify-between bg-white">
       <div id="left" className="flex items-center">
         <div id="burger" className="mr-3 flex items-center md:hidden">
           <Image src={burger} alt="logo" className="opacity-90 " />
@@ -48,7 +48,7 @@ const Navbar = () => {
           onClick={() => setIsCartOpen((curr) => !curr)}
         >
           <div id="cart-counter-bedge">{count}</div>
-          <Image src={cart} alt="logo" width={25} className="opacity-90" />
+          <Image src={cart} alt="logo" className="opacity-90 w-6 md:w-[25px]" />
         </div>
         <div id="profileImageContainer">
           <Image
