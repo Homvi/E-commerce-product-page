@@ -21,7 +21,8 @@ const Carousel = () => {
           <Image
             src={images[activeImage].normal}
             alt="white and brown shoes"
-            className="rounded-xl w-full "
+            className="rounded-xl w-full"
+            priority={true}
           />
         </div>
 
