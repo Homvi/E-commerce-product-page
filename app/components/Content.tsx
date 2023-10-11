@@ -29,12 +29,14 @@ const Content = () => {
           Featuring a durable ubber outer sole, they&apos;ll withstand
           everything the weather can offer
         </p>
-        <div className="flex items-center gap-3">
-          <h3>$125.00</h3>
-          <span className="discount">50%</span>
+        <div className="flex mb-3 justify-between items-center md:items-start md:flex-col gap-3 md:gap-0">
+          <div className="flex items-center gap-3">
+            <h3>$125.00</h3>
+            <span className="discount">50%</span>
+          </div>
+          <h4 className="discounted-price md:mb-8 my-1">$250.00</h4>
         </div>
-        <h4 className="discounted-price">$250.00</h4>
-        <div className="flex gap-3">
+        <div className="flex flex-col md:flex-row gap-3">
           <IncreaseButton
             quantity={quantity}
             handleQuantityChange={handleQuantityChange}
