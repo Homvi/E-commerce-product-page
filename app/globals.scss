@@ -59,7 +59,7 @@ body {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  h2 {
+  h1 {
     color: $orange;
     text-transform: uppercase;
     font-weight: 700;
@@ -67,7 +67,7 @@ body {
     letter-spacing: 1px;
     margin-bottom: 1em;
   }
-  h1 {
+  h2 {
     color: $veryDarkBlue;
     font-weight: 700;
     line-height: 1em;
