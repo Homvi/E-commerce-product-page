@@ -10,7 +10,7 @@ const IncreaseButton: React.FC<IncreaseButtonProps> = ({
   quantity,
 }) => {
   return (
-    <div className="counter-button">
+    <div className="counter-button w-full md:w-40">
       <span
         className="orange"
         onClick={() => {
