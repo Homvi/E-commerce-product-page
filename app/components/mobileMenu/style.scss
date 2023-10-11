@@ -1,0 +1,44 @@
+$white: hsl(0, 0%, 100%);
+$veryDarkBlue: hsl(220, 13%, 13%);
+
+#mobileMenu {
+  .overlay {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  nav {
+    height: 100%;
+    padding: 1em;
+    width: 70%;
+    background-color: $white;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    li.menu-item {
+      font-weight: 800;
+      color: $veryDarkBlue;
+    }
+  }
+  .overlay.visible {
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.2s ease-out;
+  }
+  .overlay.invisible {
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.2s ease-in;
+  }
+  nav.visible {
+    transform: translateX(0);
+    transition: all 0.2s ease-in;
+  }
+  nav.invisible {
+    transform: translateX(-100%);
+    transition: all 0.2s ease-out;
+  }
+}
