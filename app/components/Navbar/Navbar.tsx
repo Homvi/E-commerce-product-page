@@ -9,16 +9,22 @@ import Cart from "../Cart/Cart";
 import burger from "../../assets/images/icon-menu.svg";
 import "./style.scss";
 import { useSelector, selectCart } from "@/lib/redux";
+import { menuSlice, useDispatch } from "@/lib/redux";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const count = useSelector(selectCart);
 
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
-    <nav className="sticky px-3 md:px-0 md:max-w-[90%] mx-auto top-0 md:border-b-2 h-14 md:h-28 flex justify-between bg-white">
+    <nav id="desktopNav" className="sticky px-3 md:px-0 md:max-w-[90%] mx-auto top-0 md:border-b-2 h-14 md:h-28 flex justify-between bg-white">
       <div id="left" className="flex items-center">
-        <div id="burger" className="mr-3 flex items-center md:hidden">
+        <div
+          id="burger"
+          className="mr-3 flex items-center md:hidden"
+          onClick={() => dispatch(menuSlice.actions.openMenu())}
+        >
           <Image src={burger} alt="logo" className="opacity-90 " />
         </div>
         <div id="logo" className="m-1 md:m-0 md:mr-14 flex items-center">
