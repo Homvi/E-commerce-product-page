@@ -4,35 +4,55 @@ import "./style.scss";
 import close from "../../assets/images/icon-close.svg";
 import next from "../../assets/images/icon-next.svg";
 import nextOrange from "../../assets/images/icon-next-orange.svg";
-import mainImage from "../../assets/images/image-product-1.jpg";
-import imageFourSmall from "../../assets/images/image-product-4-thumbnail.jpg";
-import imageThreeSmall from "../../assets/images/image-product-3-thumbnail.jpg";
-import imageTwoSmall from "../../assets/images/image-product-2-thumbnail.jpg";
-import imageOneSmall from "../../assets/images/image-product-1-thumbnail.jpg";
 import Image from "next/image";
 import { modalSlice, useSelector, useDispatch, selectImage } from "@/lib/redux";
 import { useState } from "react";
+import { images } from "@/app/constants/images";
 
 const Modal = () => {
   const dispatch = useDispatch();
-  const activeModal = useSelector(selectImage);
-
-  const handleClose = () => {
-    dispatch(modalSlice.actions.closeModal());
-  };
+  const selectedImage = useSelector(selectImage);
 
   const [isNextButtonHovered, setIsNextButtonHovered] = useState(false);
   const [isPrevButtonHovered, setIsPrevButtonHovered] = useState(false);
+
+  if (selectedImage === null) return null;
+  const handleClose = () => {
+    dispatch(modalSlice.actions.closeModal());
+    console.log("close");
+  };
+
+  const handleNextImage = () => {
+    if (selectedImage === images.length - 1) {
+      dispatch(modalSlice.actions.changeImage(0));
+    } else {
+      dispatch(modalSlice.actions.changeImage(selectedImage + 1));
+    }
+  };
+
+  const handlePrevImage = () => {
+    if (selectedImage === 0) {
+      dispatch(modalSlice.actions.changeImage(images.length - 1));
+    } else {
+      dispatch(modalSlice.actions.changeImage(selectedImage - 1));
+    }
+  };
 
   return (
     <div id="modal">
       <div className="modal-wrapper">
         <div className="close-container">
-          <Image src={close} alt="close" height={25} width={25} />
+          <Image
+            src={close}
+            alt="close"
+            height={25}
+            width={25}
+            onClick={() => handleClose()}
+          />
         </div>
         <div className="main-image-container">
           <Image
-            src={mainImage}
+            src={images[selectedImage].normal}
             alt="product"
             height={1000}
             width={1000}
@@ -40,6 +60,7 @@ const Modal = () => {
           />
           <div
             className="button next-button"
+            onClick={handleNextImage}
             onMouseEnter={() => setIsNextButtonHovered(true)}
             onMouseLeave={() => setIsNextButtonHovered(false)}
           >
@@ -52,6 +73,7 @@ const Modal = () => {
           </div>
           <div
             className="button prev-button"
+            onClick={handlePrevImage}
             onMouseEnter={() => setIsPrevButtonHovered(true)}
             onMouseLeave={() => setIsPrevButtonHovered(false)}
           >
@@ -64,42 +86,23 @@ const Modal = () => {
           </div>
         </div>
         <div className="thumbnails-container">
-          <div className="thumbnail selected">
-            <Image
-              src={imageOneSmall}
-              alt="product"
-              height={200}
-              width={200}
-              className="thumbnail-image"
-            />
-          </div>
-          <div className="thumbnail">
-            <Image
-              src={imageTwoSmall}
-              alt="product"
-              height={200}
-              width={200}
-              className="thumbnail-image"
-            />
-          </div>
-          <div className="thumbnail">
-            <Image
-              src={imageThreeSmall}
-              alt="product"
-              height={200}
-              width={200}
-              className="thumbnail-image"
-            />
-          </div>
-          <div className="thumbnail">
-            <Image
-              src={imageFourSmall}
-              alt="product"
-              height={400}
-              width={400}
-              className="thumbnail-image"
-            />
-          </div>
+          {images.map((image, index) => (
+            <div
+              className={
+                index === selectedImage ? "thumbnail selected" : "thumbnail"
+              }
+              key={`modal_thumbnail_${index}`}
+              onClick={() => dispatch(modalSlice.actions.changeImage(index))}
+            >
+              <Image
+                src={image.thumbnail}
+                alt="product"
+                height={200}
+                width={200}
+                className="thumbnail-image"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
