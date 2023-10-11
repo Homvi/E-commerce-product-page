@@ -54,7 +54,6 @@ body {
 
 //add custom style to Text CONTENT
 #contentContainer {
-  padding: 2em;
   height: 100%;
   flex-direction: column;
   display: flex;
@@ -69,15 +68,12 @@ body {
     margin-bottom: 1em;
   }
   h1 {
-    font-size: 46px;
     color: $veryDarkBlue;
     font-weight: 700;
     line-height: 1em;
-    margin-bottom: 1em;
   }
   p {
     color: $darkGrayishBlue;
-    margin-bottom: 2em;
   }
   h3 {
     font-size: 30px;
