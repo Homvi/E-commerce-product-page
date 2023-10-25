@@ -7,7 +7,7 @@ import { Providers } from "@/lib/providers";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: "Sneakers",
+  title: "SNEAKERS",
   description: "Sneakers shop",
 };
 
